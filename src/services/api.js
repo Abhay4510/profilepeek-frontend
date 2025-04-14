@@ -70,4 +70,9 @@ export const addReply = async (parentCommentId, text) => {
   return response.data
 }
 
+export const submitContactForm = async (formData) => {
+  const response = await api.post("/contact", formData)
+  return response.data
+}
+
 export default api

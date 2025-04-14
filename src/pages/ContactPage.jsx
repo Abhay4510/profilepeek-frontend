@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Send, Mail, Phone, MapPin } from "react-feather"
 import toast from "react-hot-toast"
-import axios from "axios"
+import { submitContactForm } from "../services/api"
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -30,9 +30,9 @@ const ContactPage = () => {
 
     try {
       setLoading(true)
-      const response = await axios.post("http://localhost:8800/api/contact", formData)
+      const response = await submitContactForm(formData)
 
-      if (response.data.success) {
+      if (response.success) {
         toast.success("Your message has been sent successfully")
         setFormData({
           email: "",
@@ -40,7 +40,7 @@ const ContactPage = () => {
           message: "",
         })
       } else {
-        throw new Error(response.data.message || "Failed to send message")
+        throw new Error(response.message || "Failed to send message")
       }
     } catch (error) {
       console.error("Contact form error:", error)
@@ -67,6 +67,7 @@ const ContactPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Contact Form */}
           <motion.div
             className="bg-white rounded-xl shadow-md p-6 md:p-8"
             initial={{ opacity: 0, x: -50 }}

@@ -18,11 +18,20 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const handleLogoClick = (e) => {
+    e.preventDefault()
+    if (isAuthenticated) {
+      navigate("/feed")
+    } else {
+      navigate("/")
+    }
+  }
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+          <a href="#" onClick={handleLogoClick} className="flex items-center gap-2">
             <motion.div whileHover={{ rotate: 10 }} transition={{ duration: 0.2 }}>
               <Instagram className="w-8 h-8 text-pink-600" />
             </motion.div>
@@ -34,8 +43,9 @@ const Header = () => {
             >
               ProfilePeek
             </motion.span>
-          </Link>
+          </a>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             {isAuthenticated ? (
               <>
@@ -52,8 +62,8 @@ const Header = () => {
                   </Link>
                 </motion.div>
                 <motion.div whileHover={{ y: -2 }}>
-                  <Link to="/contact" className="text-gray-700 hover:text-pink-600 font-medium flex items-center gap-1">
-                    <span>Contact</span>
+                  <Link to="/contact" className="text-gray-700 hover:text-pink-600 font-medium">
+                    Contact
                   </Link>
                 </motion.div>
                 <motion.button
@@ -79,6 +89,16 @@ const Header = () => {
             ) : (
               <>
                 <motion.div whileHover={{ y: -2 }}>
+                  <Link to="/about" className="text-gray-700 hover:text-pink-600 font-medium">
+                    About
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ y: -2 }}>
+                  <Link to="/features" className="text-gray-700 hover:text-pink-600 font-medium">
+                    Features
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ y: -2 }}>
                   <Link to="/contact" className="text-gray-700 hover:text-pink-600 font-medium">
                     Contact
                   </Link>
@@ -92,11 +112,13 @@ const Header = () => {
             )}
           </nav>
 
+          {/* Mobile Menu Button */}
           <button className="md:hidden text-gray-700" onClick={toggleMenu} aria-label="Toggle menu">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
+        {/* Mobile Navigation */}
         {isMenuOpen && (
           <motion.nav
             className="md:hidden mt-4 pb-2 flex flex-col gap-4"
@@ -124,10 +146,10 @@ const Header = () => {
                 </Link>
                 <Link
                   to="/contact"
-                  className="text-gray-700 hover:text-pink-600 font-medium flex items-center gap-2 py-2"
+                  className="text-gray-700 hover:text-pink-600 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span>Contact</span>
+                  Contact
                 </Link>
                 <button
                   onClick={() => {
@@ -142,6 +164,20 @@ const Header = () => {
               </>
             ) : (
               <>
+                <Link
+                  to="/about"
+                  className="text-gray-700 hover:text-pink-600 font-medium py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  to="/features"
+                  className="text-gray-700 hover:text-pink-600 font-medium py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Features
+                </Link>
                 <Link
                   to="/contact"
                   className="text-gray-700 hover:text-pink-600 font-medium py-2"

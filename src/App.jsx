@@ -8,6 +8,8 @@ import FeedPage from "./pages/FeedPage"
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage"
 import TermsOfServicePage from "./pages/TermsOfServicePage"
 import ContactPage from "./pages/ContactPage"
+import AboutPage from "./pages/AboutPage"
+import FeaturesPage from "./pages/FeaturesPage"
 import Header from "./components/layout/Header"
 import Footer from "./components/layout/Footer"
 import ProtectedRoute from "./components/auth/ProtectedRoute"
@@ -25,6 +27,8 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/terms-of-service" element={<TermsOfServicePage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/features" element={<FeaturesPage />} />
               <Route
                 path="/profile"
                 element={

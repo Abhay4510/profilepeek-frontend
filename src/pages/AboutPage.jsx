@@ -12,25 +12,25 @@ const AboutPage = () => {
     {
       name: "Alex Johnson",
       role: "Founder & CEO",
-      image: "/placeholder.svg?height=200&width=200",
+    //   image: "/placeholder.svg?height=200&width=200",
       bio: "Alex has over 10 years of experience in social media analytics and previously worked at Instagram.",
     },
     {
       name: "Sarah Chen",
       role: "CTO",
-      image: "/placeholder.svg?height=200&width=200",
+    //   image: "/placeholder.svg?height=200&width=200",
       bio: "Sarah is a full-stack developer with expertise in React, Node.js, and API integrations.",
     },
     {
       name: "Michael Rodriguez",
       role: "Head of Design",
-      image: "/placeholder.svg?height=200&width=200",
+    //   image: "/placeholder.svg?height=200&width=200",
       bio: "Michael brings 8 years of UX/UI design experience and a passion for creating beautiful interfaces.",
     },
     {
       name: "Priya Patel",
       role: "Marketing Director",
-      image: "/placeholder.svg?height=200&width=200",
+    //   image: "/placeholder.svg?height=200&width=200",
       bio: "Priya specializes in digital marketing strategies and has helped grow multiple tech startups.",
     },
   ]
@@ -212,13 +212,13 @@ const AboutPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
-                <div className="aspect-square bg-gray-200">
+                {/* <div className="aspect-square bg-gray-200">
                   <img
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </div> */}
                 <div className="p-4">
                   <h3 className="text-xl font-semibold">{member.name}</h3>
                   <p className="text-purple-600 mb-2">{member.role}</p>

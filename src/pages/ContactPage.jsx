@@ -191,8 +191,8 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-medium text-lg">Phone</h3>
-                  <p className="mt-1">+1 (555) 123-4567</p>
-                  <p>+1 (555) 987-6543</p>
+                  <p className="mt-1">+91 8980145477</p>
+                  <p>+91 9558179745</p>
                 </div>
               </div>
 
@@ -205,9 +205,9 @@ const ContactPage = () => {
                   <p className="mt-1">
                     123 Social Media Street
                     <br />
-                    Tech Valley, CA 94103
+                    surat,gujarat
                     <br />
-                    United States
+                    India
                   </p>
                 </div>
               </div>

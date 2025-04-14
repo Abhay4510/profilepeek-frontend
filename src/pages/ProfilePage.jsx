@@ -210,10 +210,10 @@ const ProfilePage = () => {
               <p className="font-medium capitalize">{profile.accountType || "Standard"}</p>
             </div>
 
-            <div className="p-4 bg-gray-50 rounded-lg">
+            {/* <div className="p-4 bg-gray-50 rounded-lg">
               <p className="text-sm text-gray-500 mb-1">Instagram ID</p>
               <p className="font-medium">{profile.id}</p>
-            </div>
+            </div> */}
           </div>
         </div>
 
